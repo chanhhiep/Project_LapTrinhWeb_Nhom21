@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="style/cart.css">
+
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/pre-product.css">
+
+</head>
+<body>
+<div class="contain">
+    <header>
+        <img src="./images/main/Logo_GiaDung_livingON-80227.jpg" alt="logo" id="logo">
+        <input type="text" name="search" id="search" placeholder="  Tìm Kiếm Sản Phẩm">
+        <p><a href="#">Sản Phẩm</a></p>
+        <p><a href="#">Khuyến Mãi</a></p>
+        <p><a href="#">Thương Hiệu</a></p>
+        <a href="#"><img src="./images/icon/cart.png" alt="cart" class="head-img"></a>
+        <a href="#"><img src="./images/icon/acount.png" alt="acount" class="head-img"></a>
+    </header>
+    <ul class="header-list">
+        <li>
+            <img src="./images/icon/dress.png" alt="fashion">
+            <p>Thời Trang</p>
+        </li>
+        <li>
+            <img src="./images/icon/comestics.png" alt="comestics">
+            <p>Mỹ Phẩm</p>
+        </li>
+        <li>
+            <img src="./images/icon/kitchen.png" alt="kitchen">
+            <p>Đồ Gia Dụng</p>
+        </li>
+        <li>
+            <img src="./images/icon/wood.png" alt="wood">
+            <p>Đồ Gỗ</p>
+        </li>
+        <li>
+            <img src="./images/icon/electric.png" alt="electric">
+            <p>Đồ Điện Máy</p>
+        </li>
+        <li class="cskh">Tin Tức 24h</li>
+        <li class="cskh">Hỏi Đáp</li>
+    </ul>
+</div>
+<!--Cart-->
+<div class="cart">
+    <div class="cart-row">
+        <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+        <span class="cart-price cart-header cart-column">Giá</span>
+        <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+    </div>
+    <div class="cart-row">
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="images/main/Brandmall_Luminarc_BSP_1-(7).jpg" >
+            <span class="cart-item-title">Bộ Nồi Thuỷ Tinh</span>
+        </div>
+        <span class="cart-price cart-column">300.000đ</span>
+        <div class="cart-quantity cart-column">
+            <input class="cart-quantity-input" type="number" value="1">
+            <button class="btn btn-danger" type="button">Xóa</button>
+        </div>
+    </div>
+    <div class="cart-row">
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="images/main/Brandmall_Luminarc_BSP_2-(7).jpg" >
+            <span class="cart-item-title">Bộ Bàn Ăn Thuỷ Tinh</span>
+        </div>
+        <span class="cart-price cart-column">300.000</span>
+        <div class="cart-quantity cart-column">
+            <input class="cart-quantity-input" type="number" value="1">
+            <button class="btn btn-danger" type="button">Xóa</button>
+        </div>
+    </div>
+    <div class="cart-row">
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="images/main/Brandmall_Luminarc_BSP_3-(7).jpg" >
+            <span class="cart-item-title">Bộ Bình Ly Thuỷ Tinh</span>
+        </div>
+        <span class="cart-price cart-column">300.000</span>
+        <div class="cart-quantity cart-column">
+            <input class="cart-quantity-input" type="number" value="1">
+            <button class="btn btn-danger" type="button">Xóa</button>
+        </div>
+    </div>
+    <div class="cart-total">
+        <strong class="cart-total-title">Tổng Cộng:</strong>
+        <span class="cart-total-price">500.000đ</span>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary me-md-2" type="button">Thanh Toán  </button>
+    </div>
+</div>
+<!-- SP HNAY -->
+<div class="brand">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title">
+                    <h2>SẢN PHẨM<strong class="black"> LIÊN QUAN</strong></h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="brand-bg">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margin">
+                <div class="brand-box">
+                    <i><img src="images/main/Brandmall_Luminarc_BSP_1-(7).jpg"/></i>
+                    <h3>BỘ NỒI THUỶ TINH</h3>
+                    <span>360.000đ</span>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margin">
+                <div class="brand-box">
+                    <i><img src="images/main/Brandmall_Luminarc_BSP_2-(7).jpg"/></i>
+                    <h3>BỘ BÀN ĂN THUỶ TINH</h3>
+                    <span>400.000đ</span>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                <div class="brand-box">
+                    <i><img src="images/main/Brandmall_Luminarc_BSP_4-(7).jpg"/></i>
+                    <h3>BỘ BÌNH LY THUỶ TINH</h3>
+                    <span>250.000đ</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end SP HNAY -->
+<footer>
+    <div id="footer_company">
+        <img src="./images/main/Logo_GiaDung_livingON-80227.jpg" class="logo-footer" alt="logo">
+        <div id="footer_company-title">
+            <h4 class="footer_title">TỔNG CÔNG TY LivingOn Viet Nam</h4>
+            <p>LivingOnlivingOn là doanh nghiệp hàng đầu cung cấp dịch vụ thương mại điện tử trong và ngoài nước nước tại
+                Việt Nam.</p>
+        </div>
+        <div id="footer_company-info">
+            <p class="footer_title">THÔNG TIN LIÊN HỆ</p>
+            <i class="fa fa-location-arrow"> Giấy chứng nhận Đăng ký Kinh doanh số: 0104093672 do Phòng ĐKKD Thành phố Hà Nội Cấp ngày:
+                12/07/2019</i>
+            <i class="fa fa-location-arrow"> VP giao dịch:
+                Toà nhà N2, Km số 2, Đại lộ Thăng Long, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội.</i>
+            <i class="fa fa-envelope"><a href="#">cskhlivingon@gmail.com</a></i>
+            <i class="fa fa-phone"><a href="#">344660857</a></i>
+        </div>
+    </div>
+    <div id="footer_about">
+        <h4 class="footer_title">GIỚI THIỆU</h4>
+        <ul>
+            <li>Giới thiệu LivingOn</li>
+            <li>Tin tức</li>
+            <li>Mạng lưới giao hang</li>
+            <li>Câu hỏi thường gặp</li>
+            <li>Tuyển dụng</li>
+        </ul>
+    </div>
+    <div id="footer_suport">
+        <h4 class="footer_title">HỖ TRỢ KHÁCH HÀNG</h4>
+        <ul>
+            <li>Điều khoản sử dụng</li>
+            <li>Chính sách bảo mật thông tin</li>
+            <li>Chính sách vận chuyển</li>
+            <li>Hướng dẫn sử dụng dịch vụ</li>
+            <li>Câu hỏi thường gặp</li>
+            <li>Góp ý sản phẩm dịch vụ</li>
+            <li>Quy chế hoạt động TMĐT</li>
+            <li>Truy cập nhanh</li>
+        </ul>
+    </div>
+    <div id="footer-care">
+        <h4 class="footer_title">HỖ TRỢ</h4>
+        <div id="relate">
+            <img src="./images/icon/contact.png" class="headset-img" alt="headset">
+            <div>
+                <p>Liên hệ Hotline: 7:00 – 20:00</p>
+                <p>19008095</p>
+            </div>
+        </div>
+        <h4>Kết Nối</h4>
+        <div id="connect">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-youtube"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-envelope"></i>
+        </div>
+        <div id="goverment">
+           <img src="./images/icon/3789dc38345df7794b78d37ead0a8529-200x75.png" class="goverment-img">
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+</html>
