@@ -1,0 +1,311 @@
+body{
+    background-color: #e9e9e9;
+}
+.product-contain{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30vh 0px 0px 160px;
+    background-color: rgb(180, 180, 180);
+    width: 1024px;
+    height: 500px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.product-img{
+    margin-left: 50px;
+}
+.product-img img{
+    width: 280px;
+    height: 280px;
+}
+.product-img img:hover{
+    box-shadow: 0px 0px 15px 10px rgb(216, 216, 216);
+}
+.product-detail{
+    width: 350px;
+    margin-left: 50px;
+}
+.product-detail>p{
+    margin-bottom: 10px;
+}
+.product-name{
+    font-size: 20px;
+}
+.product-brand{
+    color: brown;
+}
+.product-sell-price{
+    color: red;
+}
+.product-price{
+    color: rgb(138, 138, 138);
+    text-decoration: line-through;
+}
+.product-detail-img img{
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+.product-detail-img img:hover{
+    box-shadow: 0px 0px 15px 10px rgb(216, 216, 216);
+}
+.product-quanlity{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px 10px 0px;
+}
+.product-quanlity .quanlity{
+    display: flex;
+    flex-direction: row;
+}
+.product-quanlity .quanlity button{
+    height: 20px;
+    width: 20px;
+}
+.product-quanlity .quanlity input{
+    height: 20px;
+    width: 30px;
+}
+.product-buy{
+    width: 200px;
+    height: 35px;
+    margin:5px 0px;
+    background-color: #34d4e9;
+    border-style: hidden;
+}
+.product-buy:hover{
+    background-color: #2E818C;
+}
+.product-promotion{
+    margin: 0px 50px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+.product-promotion h3{
+    background-color: rgb(204, 204, 204);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 10px 30px;
+}
+.product-promotion ul{
+    padding: 0px 40px;
+}
+.product-promotion p{
+    padding: 5px 10px;
+    font-size: 15px;
+    color: gray;
+}
+.product-info{
+    display: flex;
+    flex-direction: row;
+    width: 1024px;
+    margin-left: 160px;
+    background-color: rgb(180, 180, 180);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.infomation{
+    margin: 0px 50px 50px 50px;
+    width:800px;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+.lines{
+    border: 1px solid gray;
+}
+.infomation h3{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 10px 20px;
+}
+.infomation p{
+    padding: 10px 40px;
+}
+.delivery{
+    margin: 0px 50px 50px 50px;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+.delivery h3{
+    padding: 10px 20px;
+}
+.delivery p{
+    padding: 5px 30px;
+}
+.delivery ul{
+    padding: 5px 30px;
+}
+.product-comment{
+    width: 1024px;
+    margin:100px 0px 0px 160px;
+    background-color: rgb(180, 180, 180);
+    padding: 50px;
+}
+.product-comment >input{
+    width: 900px;
+    height: 80px;
+    margin: 20px 0px;
+}
+.comment .id-img{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.comment .id-img > p{
+    margin-left: 20px;
+}
+.comment-logo{
+    width: 50px;
+    height: 50px;
+}
+.more{
+    width: 150px;
+    height: 35px;
+    margin-left: 400px;
+}
+@media screen and (max-width: 1024px) {
+    .product-contain{
+        margin: 30vh 0px 0px 70px;
+        width: 890px;
+    }
+    .product-info{
+        width: 890px;
+        margin-left: 70px;
+    }
+    .product-comment{
+        width: 890px;
+        margin:100px 0px 0px 70px;
+    }
+    .product-comment >input{
+        width: 800px;
+        height: 80px;
+        margin: 20px 0px;
+    }
+    .more{
+        margin-left: 300px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .product-contain{
+        margin: 30vh 0px 0px 60px;
+        width: 670px;
+        font-size: 14px;
+    }
+    .product-img{
+        margin-left: 60px;
+    }
+    .product-img img{
+        width: 240px;
+        height: 240px;
+    }
+    .product-name{
+        font-size: 18px;
+    }
+    .product-promotion{
+        margin: 0px 60px 0px 20px;
+    }
+    .product-promotion h3{
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+    .product-promotion ul{
+        padding: 0px 30px;
+        font-size: 12px;
+    }
+    .product-promotion p{
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .product-info{
+        width: 670px;
+        margin-left: 60px;
+    }
+    .product-comment{
+        width: 670px;
+        margin:50px 0px 0px 60px;
+    }
+    .product-comment >input{
+        width: 600px;
+        height: 60px;
+        margin: 20px 0px;
+    }
+    .more{
+        margin-left: 200px;
+    }
+}
+@media screen and (max-width: 425px){
+    .product-contain{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30vh 0px 0px 45px;
+        width: 425px;
+        font-size: 14px;
+        height: auto;
+    }
+    .product-img{
+        margin-left: 0px;
+        margin-top: 90px;
+    }
+    .product-img img{
+        width: 200px;
+        height: 200px;
+    }
+    .product-name{
+        font-size: 16px;
+    }
+    .product-detail{
+        width: 300px;
+        margin-left: 100px;
+    }
+
+    .product-detail-img img{
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+    }
+
+    .product-promotion{
+        margin: 20px 20px;
+    }
+    .product-promotion h3{
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+    .product-promotion ul{
+        padding: 0px 30px;
+        font-size: 12px;
+    }
+    .product-promotion p{
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .product-info{
+        display: flex;
+        flex-direction: column;
+        width: 425px;
+        margin-left: 45px;
+    }
+    .infomation{
+        margin: 20px 20px;
+        width: 385px;
+    }
+    .product-comment{
+        width: 425px;
+        margin:50px 0px 0px 45px;
+    }
+    .product-comment >input{
+        width: 350px;
+        height: 40px;
+        margin: 20px 0px;
+    }
+    .more{
+        margin-left: 100px;
+    }
+}

@@ -1,0 +1,54 @@
+.container{
+    margin-top: 30vh;
+}
+#HNcoffee {
+    width: 100%;
+    padding: 20px;
+}
+
+#dailynews {
+    background-color: white;
+    width: 100%;
+    height: 140px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px 0px 0px;
+
+
+}
+.col {
+    background-color: rgb(89,150,163);
+    border: 1px solid rgb(131,131,131);
+}
+
+
+.title {
+    height: 57%;
+}
+
+#author {
+    font-size: 18px;
+}
+
+img {
+    margin-bottom: 10px;
+}
+
+section .quicknews {
+    background: #ffffff;
+}
+.quicknews a{
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+}
+@media screen and (max-width:600px) {
+    .column {
+        width: 100%;
+    }
+}
+.quicknews span {
+    font-size: 22px;
+    font-weight: 500;
+}

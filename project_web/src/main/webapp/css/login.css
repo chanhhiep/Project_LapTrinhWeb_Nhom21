@@ -1,0 +1,85 @@
+body{
+    background-image: linear-gradient(90deg,rgba(86, 160, 1, 0.8),
+    rgba(20, 167, 172, 0.7)),url(".");
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    background: #ffffff;
+    height: 80vh;
+    width: 30vw;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 30vh;
+}
+.container h1{
+    margin-top: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+form .txt{
+    width: 280px;
+    height: 35px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px 10px #e7e7e7;
+    border-style: none;
+    outline: none;
+
+}
+.na{
+    align-self: flex-start;
+    font-size: 16px;
+    margin: 10px 0px;
+    margin-left: 30px;
+}
+#btn{
+    width: 120px;
+    height: 40px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    border-style: none;
+    background-color: #008f83;
+    margin-top: 20px;
+}
+.device{
+    margin: 10px 0px 10px 0px;
+    color: #bbbbbb;
+}
+.platform img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px 5px #e7e7e7;
+    margin:10px 20px;
+}
+.linking{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.signup{
+    margin-top: 10px;
+    color: #008f83;
+    margin-right: 10px;
+    text-decoration: dashed;
+}
+.forget{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #064b79;
+    text-decoration: dashed;
+}

@@ -1,0 +1,10 @@
+.des2{
+    margin-top: 30vh;
+}
+img:hover {
+    transform: scale(1.01);
+}
+
+h2 {
+    margin: 30px 30px;
+}
