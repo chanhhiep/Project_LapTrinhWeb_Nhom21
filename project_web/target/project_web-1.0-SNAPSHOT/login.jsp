@@ -22,7 +22,7 @@
         <img src="./images/main/t_500x300 (1).jpg">
     </div>
     <div class="linking">
-        <p><a href="./register.html" class="signup">Sign Up</a></p>
+        <p><a href="./register.jsp" class="signup">Sign Up</a></p>
         <p>OR</p>
         <p><a  href="#" class="forget">forget Account Password</a></p>
     </div>
