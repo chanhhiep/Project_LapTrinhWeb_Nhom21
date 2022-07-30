@@ -77,6 +77,8 @@
                 </div>
                 <p class="btn_deletepro"><i class="fa-solid fa-trash"></i></p>
             </div>
+        </div>
+        <div class="product_save">
 
         </div>
     </div>
