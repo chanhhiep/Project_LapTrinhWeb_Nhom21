@@ -1,3 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -5,6 +11,7 @@
   Time: 12:01 AM
   To change this template use File | Settings | File Templates.
 --%>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/admin/admin.css"/>
 <%@ include file="./header_main.jsp"%>
 <div class="admin_container">
     <div class="container_left">
@@ -13,17 +20,17 @@
             <h3 class="admin_name">chanhhiep</h3>
             <p>administater</p>
         </div>
-        <h3 class="admind_section">DashBoard</h3>
-        <h3 class="admind_section">Product Manager</h3>
-        <h3 class="admind_section">Payment Method Manager</h3>
-        <h3 class="admind_section">Customer Manager</h3>
-        <h3 class="admind_section">Image Manager</h3>
-        <h3 class="admind_section">Catagory Manager</h3>
-        <h3 class="admind_section">Color Manager</h3>
-        <h3 class="admind_section">Review Manager</h3>
-        <h3 class="admind_section">Sale Manager</h3>
-        <h3 class="admind_section">User Manager</h3>
-        <h3 class="admind_section">Size Manager</h3>
+        <h3 class="admind_section"><a href="#"> DashBoard</a></h3>
+        <h3 class="admind_section"><a href="./ProductAdminController">Product Manager</a></h3>
+        <h3 class="admind_section"><a href="#">Payment Method Manager</a></h3>
+        <h3 class="admind_section"><a href="#">Customer Manager</a></h3>
+        <h3 class="admind_section"><a href="#">Image Manager</a></h3>
+        <h3 class="admind_section"><a href="#">Category Manager</a></h3>
+        <h3 class="admind_section"><a href="#">Color Manager</a></h3>
+        <h3 class="admind_section"><a href="#">Review Manager</a></h3>
+        <h3 class="admind_section"><a href="#">Sale Manager</a></h3>
+        <h3 class="admind_section"><a href="#">User Manager</a></h3>
+        <h3 class="admind_section"><a href="#">Size Manager</a></h3>
     </div>
     <div class="container_right">
         <h2>Product Manager</h2>
@@ -35,49 +42,47 @@
         </p>
         <h2>Product List Manager: </h2>
         <div class="product_dashlist">
-            <div class="product_detail">
-                <div class="detail_area">
-                    <p>Product ID: xxxx</p>
-                    <p>Product Nane: Name</p>
-                    <p>CategoryID: Category</p>
-                    <p>Price: 1000 vnd</p>
-                    <p>PromotionId: promotion01</p>
-                    <p>Brand: CXXX</p>
-                    <p>Inventory Quantity: 1000 sp</p>
-                    <p>Description</p>
-                    <p>Active: </p>
-                </div>
-
-                <div class="btn_editpro" >
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    <div class="product_hidden" id="product_hidden">
-                        <form action="">
-                            <p>Product ID: </p>
-                            <input type="text" value="xxx">
-                            <p>Product Nane:</p>
-                            <input type="text" value="xxx">
-                            <p>CategoryID:</p>
-                            <input type="text" value="xxx">
-                            <p>Price:</p>
-                            <input type="number" value="xxx">
-                            <p>PromotionId:</p>
-                            <input type="text" value="xxx">
-                            <p>Brand:</p>
-                            <input type="text" value="xxx">
-                            <p>Inventory Quantity:</p>
-                            <input type="number" value="xxx">
-                            <p>Description</p>
-                            <input type="text" value="xxx">
-                            <p>Active: </p>
-                            <input type="number" value="xxx">
-                            <input class="submit_btn" type="submit" value="Edit">
-                        </form>
-
+            <jsp:useBean id="payments_admin" scope="request" type="java.util.List"/>
+            <c:forEach var="pa" items="${payments_admin}">
+                <div class="product_detail">
+                    <div class="detail_area">
+                        <p>Payment ID: ${pa.payment_id}</p>
+                        <p>Payment Name:${pa.payment_name}</p>
+                        <p>Create Date: ${pa.create_date}</p>
+                        <p>Update Date: ${pa.update_date}</p>
                     </div>
-                </div>
-                <p class="btn_deletepro"><i class="fa-solid fa-trash"></i></p>
-            </div>
 
+                    <div class="btn_editpro" >
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <div class="product_hidden" id="product_hidden">
+                            <form action="./UpdatePaymentController">
+                                <p>Payment ID: </p>
+                                <input type="text" name="payment_id_update" value="${pa.payment_id}">
+                                <p>Payment Nane:</p>
+                                <input type="text" name="payment_name_update" value="${pa.payment_name}">
+                                <input class="submit_btn" type="submit" value="Edit">
+                            </form>
+
+                        </div>
+                    </div>
+                    <form action="./DeletePaymentController">
+                        <input name="payment_id_delete" value="${pa.payment_id}" type="hidden">
+                        <button type="submit" class="btn_deletepro"><i class="fa-solid fa-trash"></i></button>
+                    </form>
+
+
+                </div>
+            </c:forEach>
+        </div>
+        <div class="product_save">
+            <h3>Add Payment</h3>
+            <form action="./SavePaymentController">
+                <p>Payment ID: </p>
+                <input type="text" name="payment_id" >
+                <p>Payment Nane:</p>
+                <input type="text" name="payment_name" >
+                <input class="submit_addbtn" type="submit" value="Save">
+            </form>
         </div>
     </div>
 </div>
