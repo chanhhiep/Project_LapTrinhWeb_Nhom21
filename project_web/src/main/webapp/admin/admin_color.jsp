@@ -1,3 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -5,6 +11,7 @@
   Time: 12:03 AM
   To change this template use File | Settings | File Templates.
 --%>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/admin/admin.css"/>
 <%@ include file="./header_main.jsp"%>
 <div class="admin_container">
     <div class="container_left">
@@ -35,49 +42,47 @@
         </p>
         <h2>Product List Manager: </h2>
         <div class="product_dashlist">
-            <div class="product_detail">
-                <div class="detail_area">
-                    <p>Product ID: xxxx</p>
-                    <p>Product Nane: Name</p>
-                    <p>CategoryID: Category</p>
-                    <p>Price: 1000 vnd</p>
-                    <p>PromotionId: promotion01</p>
-                    <p>Brand: CXXX</p>
-                    <p>Inventory Quantity: 1000 sp</p>
-                    <p>Description</p>
-                    <p>Active: </p>
-                </div>
-
-                <div class="btn_editpro" >
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    <div class="product_hidden" id="product_hidden">
-                        <form action="">
-                            <p>Product ID: </p>
-                            <input type="text" value="xxx">
-                            <p>Product Nane:</p>
-                            <input type="text" value="xxx">
-                            <p>CategoryID:</p>
-                            <input type="text" value="xxx">
-                            <p>Price:</p>
-                            <input type="number" value="xxx">
-                            <p>PromotionId:</p>
-                            <input type="text" value="xxx">
-                            <p>Brand:</p>
-                            <input type="text" value="xxx">
-                            <p>Inventory Quantity:</p>
-                            <input type="number" value="xxx">
-                            <p>Description</p>
-                            <input type="text" value="xxx">
-                            <p>Active: </p>
-                            <input type="number" value="xxx">
-                            <input class="submit_btn" type="submit" value="Edit">
-                        </form>
-
+            <jsp:useBean id="colors_admin" scope="request" type="java.util.List"/>
+            <c:forEach var="c" items="${colors_admin}">
+                <div class="product_detail">
+                    <div class="detail_area">
+                        <p>Color ID: ${c.color_id}</p>
+                        <p>Color Name:${c.color_name}</p>
+                        <p>Create Date: ${c.create_date}</p>
+                        <p>Update Date: ${c.update_date}</p>
                     </div>
-                </div>
-                <p class="btn_deletepro"><i class="fa-solid fa-trash"></i></p>
-            </div>
 
+                    <div class="btn_editpro" >
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <div class="product_hidden" id="product_hidden">
+                            <form action="./UpdateColorController">
+                                <p>Color ID: </p>
+                                <input type="text" name="color_id_update" value="${c.color_id}">
+                                <p>Color Nane:</p>
+                                <input type="text" name="color_name_update" value="${c.color_name}">
+                                <input class="submit_btn" type="submit" value="Edit">
+                            </form>
+
+                        </div>
+                    </div>
+                    <form action="./DeleteColorController">
+                        <input name="color_id_delete" value="${c.color_id}" type="hidden">
+                        <button type="submit" class="btn_deletepro"><i class="fa-solid fa-trash"></i></button>
+                    </form>
+
+
+                </div>
+            </c:forEach>
+        </div>
+        <div class="product_save">
+            <h3>Add Color</h3>
+            <form action="./SaveColorController">
+                <p>Color ID: </p>
+                <input type="text" name="color_id" >
+                <p>Color Name:</p>
+                <input type="text" name="color_name" >
+                <input class="submit_addbtn" type="submit" value="Save">
+            </form>
         </div>
     </div>
 </div>
