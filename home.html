@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>LivingOn</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LivingOn</title>
+
+
+    <link rel="stylesheet" href="style/head.css">
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="detail.js" defer></script>
+
+
+
+</head>
+<body>
+<script src="TimKiem.js"></script>
+<div class="contain">
+    <header>
+       <img src="./images/main/Logo_GiaDung_livingON-80227.jpg" alt="logo" id="logo">
+        <input type="text" name="search" id="search" placeholder="  Tìm Kiếm Sản Phẩm"onkeyup="search()">
+        <p><a href="#">Sản Phẩm</a></p>
+        <p><a href="#">Khuyến Mãi</a></p>
+        <p><a href="#">Thương Hiệu</a></p>
+        <a href="#"><img src="./images/icon/cart.png" alt="cart" class="head-img"></a>
+        <a href="#"><img src="./images/icon/acount.png" alt="acount" class="head-img"></a>
+    </header>
+    <ul class="header-list">
+        <li>
+            <img src="./images/icon/dress.png" alt="fashion">
+            <p><a href="ThoiTrang.html"> Thời Trang</a></p>
+        </li>
+        <li>
+            <img src="./images/icon/comestics.png" alt="comestics">
+            <p><a href="MyPham.html"> Mỹ Phẩm</a></p>
+        </li>
+        <li>
+            <img src="./images/icon/kitchen.png" alt="kitchen">
+            <p><a href="DoGiaDung.html"> Đồ Gia Dụng</a></p>
+        </li>
+        <li>
+            <img src="./images/icon/wood.png" alt="wood">
+            <p><a href="DoGo.html"> Đồ Gỗ</a></p>
+        </li>
+        <li>
+            <img src="./images/icon/electric.png" alt="electric">
+            <p><a href="DoDienMay.html"> Đồ Điện Máy</a></p>
+        </li>
+        <li class="cskh"><a href="TinTuc.html"> Tin Tức 24h</a></li>
+        <li class="cskh"><a href="HoiDap.html"> Hỏi Đáp</a></li>
+    </ul>
+</div>
+
+<div class="container" id="product-list">
+    <div class="products-container">
+
+         <div class="container-box" data-name="p-1">
+        <img src="./images/main/Brandmall_Luminarc_BSP_2-(7).jpg" class="box-img" alt="domestic">
+        <p><a href="product.html" class="product-name">Bộ Bàn Ăn Thuỷ Tinh</a></p>
+        <p class="sell-price">Giá : 360.000đ <span class="price">520.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+
+    <div class="container-box"data-name="p-2">
+        <img src="./images/main/d1.png" class="box-img" alt="domestic">
+        <p><a href="product.html" class="product-name">Bộ 3 Nồi Inox Cao Cấp</a></p>
+        <p class="sell-price">Giá : 360.000đ <span class="price">520.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+
+    <div class="container-box"data-name="p-3">
+        <img src="./images/main/mp1.jpg" class="box-img" alt="domestic">
+        <p><a href="#" class="product-name">Combo Son Cao Cấp</a></p>
+        <p class="sell-price">Giá : 960.000đ <span class="price">1.520.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+
+    <div class="container-box"data-name="p-4">
+        <img src="./images/main/Brandmall_Luminarc_BSP_4-(7).jpg" class="box-img" alt="domestic">
+        <p><a href="#" class="product-name">Bộ Bình Ly Thuỷ Tinh</a></p>
+        <p class="sell-price">Giá : 360.000đ <span class="price">520.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+
+    <div class="container-box"data-name="p-5">
+        <img src="./images/main/binh-giu-nhiet-inox-cao-cap-coca-cola-80_2408731_L.jpg" class="box-img" alt="domestic">
+        <p><a href="#" class="product-name">Bình Giữ Nhiệt Cao Cấp</a></p>
+        <p class="sell-price">Giá : 160.000đ <span class="price">320.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+
+    <div class="container-box"data-name="p-6">
+        <img src="./images/main/binh-thuy-tinh-co-voi-cao-cap-3-lit_2408774_L.jpg" class="box-img" alt="domestic">
+        <p><a href="#" class="product-name">Bình Thuỷ Tinh Có Vòi Cao Cấp</a></p>
+        <p class="sell-price">Giá : 260.000đ <span class="price">320.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+
+    <div class="container-box"data-name="p-7">
+        <img src="./images/main/f1.jpg" class="box-img" alt="domestic">
+        <p><a href="#" class="product-name">Áo Sơ Mi Nam Cao Cấp</a></p>
+        <p class="sell-price">Giá : 360.000đ <span class="price">520.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+
+    <div class="container-box"data-name="p-8">
+        <img src="./images/main/ban-hoc-sinh-xep-gon-cho-be-tien-loi-san_2408576_L.jpg" class="box-img" alt="domestic">
+        <p><a href="#" class="product-name">Bàn Gỗ</a></p>
+        <p class="sell-price">Giá : 360.000đ <span class="price">520.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+
+    <div class="container-box"data-name="p-9">
+        <img src="./images/main/d4.png" class="box-img" alt="domestic">
+        <p><a href="#" class="product-name">Bộ Máy Xay Sinh Tố</a></p>
+        <p class="sell-price">Giá : 1.420.000đ <span class="price">620.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+    <div class="container-box"data-name="p-10">
+        <img src="./images/main/dg1.jpg" class="box-img" alt="domestic">
+        <p><a href="#" class="product-name">Bộ Bàn Gỗ</a></p>
+        <p class="sell-price">Giá : 15.460.000đ <span class="price">22.620.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+    <div class="container-box"data-name="p-11">
+        <img src="./images/main/dm1.png" class="box-img" alt="domestic">
+        <p><a href="#" class="product-name">Tủ Lạnh 4 Cửa Cao Cấp</a></p>
+        <p class="sell-price">Giá : 15.500.000đ <span class="price">25.520.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+    <div class="container-box"data-name="p-12">
+        <img src="./images/main/f2.jpg" class="box-img" alt="domestic">
+        <p><a href="#" class="product-name">Áo Thun Có Cổ Nam Cao Cấp</a></p>
+        <p class="sell-price">Giá : 360.000đ <span class="price">520.000đ</span></p>
+        <button class="sell-button">Mua Ngay</button>
+    </div>
+
+</div>
+</div>
+<div class="products-preview">
+        <div class="preview " data-target="p-1">
+            <i class="fas fa-times"></i>
+            <img src="./images/main/Brandmall_Luminarc_BSP_2-(7).jpg" class="box-img" alt="domestic">
+            <h3> Bộ Bàn Ăn Thuỷ Tinh</h3>
+
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 100 )</span>
+            </div>
+            <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+            <div class="prices">360.000đ</div>
+            <div class="buttons">
+                <a href="#" class="buy" >Mua Ngay</a>
+                <a href="#" class="cart" >Thêm Vào Giỏ Hàng</a>
+            </div>
+
+        </div>
+    <div class="preview" data-target="p-2">
+        <i class="fas fa-times"></i>
+        <img src="./images/main/d1.png" class="box-img" alt="domestic">
+        <h3> Bộ 3 Nồi Inox Cao Cấp</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 100 )</span>
+        </div>
+        <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+        <div class="prices">360.000đ</div>
+        <div class="buttons">
+            <a href="#" class="buy" >Mua Ngay</a>
+            <a href="#" class="cart"  >Thêm Vào Giỏ Hàng</a>
+        </div>
+
+    </div>
+    <div class="preview" data-target="p-3">
+        <i class="fas fa-times"></i>
+        <img src="./images/main/mp1.jpg" class="box-img" alt="domestic">
+        <h3> Combo Son Cao Cấp</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 100 )</span>
+        </div>
+        <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+        <div class="prices"   >960.000đ</div>
+        <div class="buttons">
+            <a href="#" class="buy" >Mua Ngay</a>
+            <a href="#" class="cart"  >Thêm Vào Giỏ Hàng</a>
+        </div>
+
+    </div>
+    <div class="preview" data-target="p-4">
+        <i class="fas fa-times"></i>
+        <img src="./images/main/Brandmall_Luminarc_BSP_4-(7).jpg" class="box-img" alt="domestic">
+        <h3> Bộ Bình Ly Thuỷ Tinh</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 100 )</span>
+        </div>
+        <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+        <div class="prices"   >360.000đ</div>
+        <div class="buttons">
+            <a href="#" class="buy" >Mua Ngay</a>
+            <a href="#" class="cart" > Thêm Vào Giỏ Hàng</a>
+        </div>
+
+    </div>
+    <div class="preview" data-target="p-5">
+        <i class="fas fa-times"></i>
+        <img src="./images/main/binh-giu-nhiet-inox-cao-cap-coca-cola-80_2408731_L.jpg" class="box-img" alt="domestic">
+        <h3> Bình Giữ Nhiệt Cao Cấp</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 100 )</span>
+        </div>
+        <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+        <div class="prices"   >160.000đ</div>
+        <div class="buttons">
+            <a href="#" class="buy" >Mua Ngay</a>
+            <a href="#" class="cart"  >Thêm Vào Giỏ Hàng</a>
+        </div>
+
+    </div>
+    <div class="preview" data-target="p-6">
+        <i class="fas fa-times"></i>
+        <img src="./images/main/binh-thuy-tinh-co-voi-cao-cap-3-lit_2408774_L.jpg" class="box-img" alt="domestic">
+        <h3> Bình Thuỷ Tinh Có Vòi Cao Cấp</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 100 )</span>
+        </div>
+        <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+        <div class="prices"   >260.000đ</div>
+        <div class="buttons">
+            <a href="#" class="buy" >Mua Ngay</a>
+            <a href="#" class="cart"  >Thêm Vào Giỏ Hàng</a>
+        </div>
+
+    </div>
+    <div class="preview" data-target="p-7">
+        <i class="fas fa-times"></i>
+        <img src="./images/main/f1.jpg" class="box-img" alt="domestic">
+        <h3> Áo Sơ Mi Nam Cao Cấp</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 100 )</span>
+        </div>
+        <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+        <div class="prices"   >360.000đ</div>
+        <div class="buttons">
+            <a href="#" class="buy" >Mua Ngay</a>
+            <a href="#" class="cart"  >Thêm Vào Giỏ Hàng</a>
+        </div>
+
+    </div>
+    <div class="preview" data-target="p-8">
+        <i class="fas fa-times"></i>
+        <img src="./images/main/ban-hoc-sinh-xep-gon-cho-be-tien-loi-san_2408576_L.jpg" class="box-img" alt="domestic">
+        <h3> Bàn Gỗ</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 100 )</span>
+        </div>
+        <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+        <div class="prices"   >360.000đ</div>
+        <div class="buttons">
+            <a href="#" class="buy" >Mua Ngay</a>
+            <a href="#" class="cart"  >Thêm Vào Giỏ Hàng</a>
+        </div>
+
+    </div>
+    <div class="preview" data-target="p-9">
+        <i class="fas fa-times"></i>
+        <img src="./images/main/d4.png" class="box-img" alt="domestic">
+        <h3> Bộ 3 Máy Xay Sinh Tố</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 100 )</span>
+        </div>
+        <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+        <div class="prices"   >1.420.000đ</div>
+        <div class="buttons">
+            <a href="#" class="buy" >Mua Ngay</a>
+            <a href="#" class="cart" >Thêm Vào Giỏ Hàng </a>
+        </div>
+
+    </div>
+    <div class="preview" data-target="p-10">
+        <i class="fas fa-times"></i>
+        <img src="./images/main/dg1.jpg" class="box-img" alt="domestic">
+        <h3> Bộ Bàn Gỗ Cao Cấp</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 100 )</span>
+        </div>
+        <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+        <div class="prices"  >15.460.000đ </div>
+        <div class="buttons">
+            <a href="#" class="buy" >Mua Ngay</a>
+            <a href="#" class="cart"  >Thêm Vào Giỏ Hàng</a>
+        </div>
+
+    </div>
+    <div class="preview" data-target="p-11">
+        <i class="fas fa-times"></i>
+        <img src="./images/main/dm1.png" class="box-img" alt="domestic">
+        <h3> Tủ Lạnh 4 Cửa Cao Cấp</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 100 )</span>
+        </div>
+        <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+        <div class="prices"> 15.500.000đ </div>
+        <div class="buttons">
+            <a href="#" class="buy" >Mua Ngay</a>
+            <a href="#" class="cart"  >Thêm Vào Giỏ Hàng</a>
+        </div>
+
+    </div>
+    <div class="preview" data-target="p-12">
+        <i class="fas fa-times"></i>
+        <img src="./images/main/f2.jpg" class="box-img" alt="domestic">
+        <h3> Áo Thun Có Cổ Nam Cao Cấp</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 100 )</span>
+        </div>
+        <p>Sản Phẩm Chính Hãng Cao Cấp</p>
+        <div class="prices"   >360.000đ</div>
+        <div class="buttons">
+            <a hrefs"#" class="buy" >Mua Ngay</a>
+            <a href="#" class="cart"  >Thêm Vào Giỏ Hàng</a>
+        </div>
+
+    </div>
+
+
+</div>
+<footer>
+    <div id="footer_company">
+        <img src="./images/main/Logo_GiaDung_livingON-80227.jpg" class="logo-footer" alt="logo">
+        <div id="footer_company-title">
+            <h4 class="footer_title">TỔNG CÔNG TY LivingOn Viet Nam</h4>
+            <p>livingOnlivingOn là doanh nghiệp hàng đầu cung cấp dịch vụ thương mại điện tử trong và ngoài nướcnước tại
+                Việt Nam.</p>
+        </div>
+        <div id="footer_company-info">
+            <p class="footer_title">THÔNG TIN LIÊN HỆ</p>
+            <i class="fa fa-location-arrow"> Giấy chứng nhận Đăng ký Kinh doanh số: 0104093672 do Phòng ĐKKD Thành phố Hà Nội Cấp ngày:
+                12/07/2019</i>
+            <i class="fa fa-location-arrow"> VP giao dịch:
+                Toà nhà N2, Km số 2, Đại lộ Thăng Long, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội.</i>
+            <i class="fa fa-envelope"><a href="#">cskhlivingon@gmail.com</a></i>
+            <i class="fa fa-phone"><a href="#">344660857</a></i>
+        </div>
+    </div>
+    <div id="footer_about">
+        <h4 class="footer_title">GIỚI THIỆU</h4>
+        <ul>
+            <li>Giới thiệu LivingOn</li>
+            <li>Tin tức</li>
+            <li>Mạng lưới giao hang</li>
+            <li>Câu hỏi thường gặp</li>
+            <li>Tuyển dụng</li>
+        </ul>
+    </div>
+    <div id="footer_suport">
+        <h4 class="footer_title">HỖ TRỢ KHÁCH HÀNG</h4>
+        <ul>
+            <li>Điều khoản sử dụng</li>
+            <li>Chính sách bảo mật thông tin</li>
+            <li>Chính sách vận chuyển</li>
+            <li>Hướng dẫn sử dụng dịch vụ</li>
+            <li>Câu hỏi thường gặp</li>
+            <li>Góp ý sản phẩm dịch vụ</li>
+            <li>Quy chế hoạt động TMĐT</li>
+            <li>Truy cập nhanh</li>
+        </ul>
+    </div>
+    <div id="footer-care">
+        <h4 class="footer_title">HỖ TRỢ</h4>
+        <div id="relate">
+            <img src="./images/icon/contact.png" class="headset-img" alt="headset">
+            <div>
+                <p>Liên hệ Hotline: 7:00 – 20:00</p>
+                <p>19008095</p>
+            </div>
+        </div>
+        <h4>Kết Nối</h4>
+        <div id="connect">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-youtube"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-envelope"></i>
+        </div>
+        <div id="goverment">
+            <img src="./images/main/3789dc38345df7794b78d37ead0a8529-200x75.png" class="goverment-img">
+        </div>
+    </div>
+</footer>
+<script src="./script_template.js"></script>
+</body>
+</html>
