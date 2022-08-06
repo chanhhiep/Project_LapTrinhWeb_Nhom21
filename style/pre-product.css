@@ -1,0 +1,175 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #666666;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    overflow-x: hidden;
+}
+:root{
+    --back-color:#2E818C;
+}
+a{
+    color: blue;
+    text-decoration: none;
+}
+p{
+    margin: 0;
+}
+
+  nav img {
+
+    margin-top: 115px;
+
+    width: 100%;
+
+}
+
+
+/** TOP SP **/
+.trending {
+    background:lightseagreen;
+    margin-top: 50px;
+}
+.trending .title{
+    text-align:center;
+    font-size: 30px;
+    background: whitesmoke;
+    margin-top: 50px;
+    color: blueviolet;
+}
+.container-fluid .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 20px 25px 20px;
+}
+.trending .trending-box {
+    text-align: center;
+    align-items: center;
+
+
+}
+
+.trending .trending-box i {
+    height: 290px;
+    float: left;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+
+
+
+}
+.margin .trending-box span{
+    color: #020000;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;
+
+}
+
+
+
+.trending .trending-box h3 {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 28px;
+    color: #050000;
+    padding: 20px 20px;
+
+}
+
+
+/** end TOP SP **/
+
+
+/** SP HNAY**/
+.brand {
+   margin-top: -138px;
+    padding-top: 90px;
+    box-sizing: border-box;
+
+}
+
+.brand .title {
+    text-align:center;
+    padding-bottom: 10px;
+    background: whitesmoke;
+    margin-top: 50px;
+}
+
+.brand .title h2 {
+    font-size: 40px;
+    line-height: 45px;
+    padding-top: 50px;
+    color: blue;
+    font-weight: normal;
+    background: whitesmoke;
+
+
+}
+
+
+.brand-bg  {
+    box-shadow: papayawhip 0 0 19px 8px;
+    margin-bottom: 29px;
+    background: lightseagreen;
+}
+
+.brand-bg .brand-box {
+    background: whitesmoke;
+    text-align: center;
+    padding: 25px 20px 25px 20px;
+    float: left;
+
+
+}
+
+.brand-bg .brand-box:hover {
+    background: #f0efef;
+}
+
+.brand-bg .brand-box i {
+    height: 290px;
+    float: left;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.brand-bg .brand-box img {
+    max-height: 290px;
+
+}
+
+
+.brand-bg .brand-box  h3 {
+    color: #020000;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    padding-top: 15px;
+    text-transform: uppercase;
+}
+
+.brand-bg .brand-box span {
+    color: #020000;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;
+}
+
+/** end SP HNAY **/
+
+
