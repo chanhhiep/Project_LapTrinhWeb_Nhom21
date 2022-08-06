@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -6,7 +7,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <link rel="stylesheet" href="./css/home.css">
-<%@ include file="./header.jsp"%>
+<c:set var="auth" value="${sessionScope.auth}"/>
+<c:if test="${auth==null}">
+    <%@ include file="header.jsp"%>
+</c:if>
+<c:if test="${auth!=null}">
+    <c:if test="${auth.role.equals('customer')}">
+        <%@ include file="pheader.jsp"%>
+    </c:if>
+</c:if>
 <div class="banner">
     <img src="./images/main/Brandmall_Luminarc_BSP_1-(7).jpg" alt="" class="banner_img">
     <i class="arrow fa fa-arrow-left" id="arrow-left"></i>

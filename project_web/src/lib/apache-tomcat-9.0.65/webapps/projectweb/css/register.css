@@ -1,0 +1,65 @@
+body{
+    background-image: linear-gradient(90deg,rgba(86, 160, 1, 0.8),
+    rgba(20, 167, 172, 0.7)),url("#");
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    background: #ffffff;
+    width: 30vw;
+    text-align: center;
+    border-radius: 10px;
+    height: auto;
+    margin-top: 30vh;
+}
+.container h1{
+    align-self: flex-start;
+    color: #008f83;
+    margin-top: 30px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form .txt{
+    width: 340px;
+    height: 35px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px 10px #e7e7e7;
+    border-style: none;
+    outline: none;
+    align-self: flex-start;
+    margin-left: 30px;
+}
+.na{
+    align-self: flex-start;
+    margin-left: 30px;
+    font-size: 14px;
+    color: #008f83;
+}
+#btn{
+    width: 120px;
+    height: 40px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    border-style: none;
+    background-color: #008f83;
+    margin-top: 20px;
+}
+.signup{
+    margin-top: 10px;
+    font-size: 18px;
+    color: #008f83;
+    margin-bottom: 30px;
+}

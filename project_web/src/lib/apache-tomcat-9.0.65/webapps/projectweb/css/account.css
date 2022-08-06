@@ -1,0 +1,93 @@
+.account_container{
+    margin-top: 40vh;
+}
+
+.product_detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid rgb(175, 175, 175);
+    background-color: rgb(231, 231, 231);
+    margin-top: 50px;
+    box-shadow: 5px 5px 20px 3px rgb(180, 195, 196);
+    border-radius: 5px;
+}
+.detail_area{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+    grid-column-gap: 70px;
+    padding:40px;
+    margin-left: 50px;
+}
+.btn_editpro{
+    color: green;
+    height: auto;
+    font-size: 50px;
+    margin-left: 120px;
+}
+.btn_deletepro{
+    color: red;
+    height: auto;
+    font-size: 50px;
+    margin-left: 50px;
+    border-style: hidden;
+}
+.btn_editpro .product_hidden{
+    display: none;
+    position: absolute;
+    border: 1px solid rgb(177, 177, 177);
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    box-shadow: 5px 5px 40px 10px gray;
+    cursor: pointer;
+    font-size: 18px;
+}
+.btn_editpro:hover .product_hidden{
+    display: block;
+    position: absolute;
+    border: 1px solid rgb(177, 177, 177);
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    background-color: aquamarine;
+    box-shadow: 5px 5px 40px 10px gray;
+    cursor: pointer;
+}
+.submit_btn{
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: brown;
+    margin-top: 10px;
+
+}
+.product_save{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.product_save form{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 10px;
+    border: 1px solid rgb(177, 177, 177);
+    margin-top: 30px;
+    padding: 10px 30px 10px 30px;
+    background-color: antiquewhite;
+}
+.product_save form input{
+    height: 30px;
+    width: 250px;
+}
+.submit_addbtn{
+    height: 50px;
+    width: 300px;
+    background-color: green;
+    border-color: aliceblue;
+    border-radius: 5px;
+    margin-left: 250px;
+}
+
