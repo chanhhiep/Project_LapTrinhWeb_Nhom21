@@ -13,8 +13,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LivingOn</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="./css/head.css">
 
 </head>
@@ -27,7 +27,7 @@
         <p><a href="#">Khuyến Mãi</a></p>
         <p><a href="./brand.jsp">Thương Hiệu</a></p>
         <a href="./cart.jsp"><img src="./images/icon/cart.png" alt="cart" class="head-img"></a>
-        <a href="./login.jsp"><img src="./images/icon/acount.png" alt="acount" class="head-img"></a>
+        <a href="./LoginPage"><img src="./images/icon/acount.png" alt="acount" class="head-img"></a>
     </header>
     <ul class="header-list">
         <li>

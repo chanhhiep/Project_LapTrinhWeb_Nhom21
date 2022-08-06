@@ -93,7 +93,7 @@
                 <p>customer Email: </p>
                 <input type="text" name="customer_email">
                 <p>customer Phone:</p>
-                <input type="text" name="customer_phone"">
+                <input type="text" name="customer_phone">
                 <p>customer Address: </p>
                 <input type="text" name="customer_address">
                 <input class="submit_addbtn" type="submit" value="Save">
