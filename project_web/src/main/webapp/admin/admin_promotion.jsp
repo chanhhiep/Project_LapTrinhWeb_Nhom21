@@ -1,0 +1,104 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
+<%--
+  Created by IntelliJ IDEA.
+  User: Admin
+  Date: 30/7/2022
+  Time: 12:03 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/admin/admin.css"/>
+<%@ include file="./header_main.jsp"%>
+<div class="admin_container">
+    <div class="container_left">
+        <div class="admin_status">
+            <img src="./images/auto-admin-logo-7-1.png" alt="admin_logo">
+            <h3 class="admin_name">chanhhiep</h3>
+            <p>administater</p>
+        </div>
+        <h3 class="admind_section">DashBoard</h3>
+        <h3 class="admind_section">Product Manager</h3>
+        <h3 class="admind_section">Payment Method Manager</h3>
+        <h3 class="admind_section">Customer Manager</h3>
+        <h3 class="admind_section">Image Manager</h3>
+        <h3 class="admind_section">Catagory Manager</h3>
+        <h3 class="admind_section">Color Manager</h3>
+        <h3 class="admind_section">Review Manager</h3>
+        <h3 class="admind_section">Sale Manager</h3>
+        <h3 class="admind_section">User Manager</h3>
+        <h3 class="admind_section">Size Manager</h3>
+    </div>
+    <div class="container_right">
+        <h2>Product Manager</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Saepe placeat ex sapiente nisi? Asperiores,
+            ipsa ducimus aliquam deleniti velit at earum similique odit nesciunt incidunt,
+            consequatur ea quam corrupti dignissimos.
+        </p>
+        <h2>Product List Manager: </h2>
+        <div class="product_dashlist">
+            <jsp:useBean id="promotions_admin" scope="request" type="java.util.List"/>
+            <c:forEach var="p" items="${promotions_admin}">
+                <div class="product_detail">
+                    <div class="detail_area">
+                        <p>Promotion ID: ${p.promotion_id}</p>
+                        <p>Promotion Name:${p.promotion_name}</p>
+                        <p>Promotion Rate: ${p.promotion_rate}</p>
+                        <p>Promotion Content:${p.promotion_content}</p>
+                        <p>Promotion active: ${p.active}</p>
+                        <p>Create Date: ${p.create_date}</p>
+                        <p>Update Date: ${p.update_date}</p>
+                    </div>
+
+                    <div class="btn_editpro" >
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <div class="product_hidden" id="product_hidden">
+                            <form action="./UpdatePromotionController">
+                                <p>Promotion ID: </p>
+                                <input type="text" name="promotion_id_update" value="${p.promotion_id}">
+                                <p>Promotion Name:</p>
+                                <input type="text" name="promotion_name_update" value="${p.promotion_name}">
+                                <p>Promotion rate: </p>
+                                <input type="number" name="promotion_rate_update" value="${p.promotion_rate}">
+                                <p>Promotion Content:</p>
+                                <input type="text" name="promotion_content_update" value="${p.promotion_content}">
+                                <p>Promotion active: </p>
+                                <input type="number" name="promotion_active_update" value="${p.active}">
+                                <input class="submit_btn" type="submit" value="Edit">
+                            </form>
+
+                        </div>
+                    </div>
+                    <form action="./DeletePromotionController">
+                        <input name="promotion_id_delete" value="${p.promotion_id}" type="hidden">
+                        <button type="submit" class="btn_deletepro"><i class="fa-solid fa-trash"></i></button>
+                    </form>
+
+
+                </div>
+            </c:forEach>
+        </div>
+        <div class="product_save">
+            <h3>Add Payment</h3>
+            <form action="./SavePromotionController">
+                <p>Promotion ID: </p>
+                <input type="text" name="promotion_id" >
+                <p>Promotion Name:</p>
+                <input type="text" name="promotion_name" >
+                <p>Promotion rate: </p>
+                <input type="number" name="promotion_rate" >
+                <p>Promotion Content:</p>
+                <input type="text" name="promotion_content" >
+                <input class="submit_addbtn" type="submit" value="Save">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

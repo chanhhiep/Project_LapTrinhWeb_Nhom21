@@ -1,0 +1,211 @@
+.section_product{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.product_select{
+    width: 20%;
+    margin-top: 0;
+}
+.price_range{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#price_from{
+    width: 100px;
+    height: 30px;
+    margin-right: 10px;
+}
+#price_to{
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+}
+#apply_range{
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 20%;
+    background-color: orange;
+}
+.button_size{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+}
+.button_color{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+}
+.btn_color{
+    width: 30px;
+    height: 30px;
+}
+.container{
+    margin: 15% 5% 0% 5%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    width: 60%;
+}
+.container-box{
+    height: 350px;
+    width: 250px;
+    background-color: #ffffff;
+    /*border: 1px solid rgb(163, 163, 163);*/
+    border-radius: 15px;
+}
+.box-img{
+    width: 250px;
+    height: 230px;
+    overflow: hidden;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.price{
+    color: #a3a3a3;
+    text-decoration: line-through;
+    margin-left: 15px;
+}
+.sell-price{
+    color: #81000b;
+}
+.container-box >p{
+    margin: 5px 0px 0px 10px;
+}
+.container-box:hover{
+    box-shadow: 0px 0px 15px 10px rgb(216, 216, 216);
+}
+.btn-submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.sell-button{
+    width: 110px;
+    height: 35px;
+    text-align: center;
+    margin:10px 10px 0px 10px;
+    background-color: #2E818C;
+    border-style: hidden;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+.sell-button:hover{
+    background-color: #8adce7;
+}
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+}
+.banner_img{
+    height: 400px;
+    width: 1024px;
+}
+.arrow{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 40px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #dfdfdf;
+}
+#arrow-left{
+    margin-right: 60%;
+}
+#arrow-right{
+    margin-left: 60%;
+}
+@media screen and (max-width: 1024px) {
+    .container{
+
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 10px;
+
+    }
+    .container-box{
+        height: 300px;
+        width: 200px;
+        background-color: #ffffff;
+        /* border: 1px solid rgb(163, 163, 163);*/
+    }
+    .box-img{
+        width: 200px;
+        height: 180px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+    .sell-button{
+        width: 180px;
+        height: 30px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .container{
+
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 10px;
+
+    }
+    .container-box{
+        height: 200px;
+        width: 150px;
+        background-color: #ffffff;
+        font-size: 10px;
+        /* border: 1px solid rgb(163, 163, 163);*/
+    }
+    .box-img{
+        width: 150px;
+        height: 120px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+    .sell-button{
+        width: 120px;
+        height: 20px;
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .container{
+
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 10px;
+
+    }
+    .container-box{
+        height: 200px;
+        width: 150px;
+        background-color: #ffffff;
+        font-size: 10px;
+        /* border: 1px solid rgb(163, 163, 163);*/
+    }
+    .box-img{
+        width: 150px;
+        height: 120px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+    .sell-button{
+        width: 120px;
+        height: 20px;
+        font-size: 10px;
+    }
+}
