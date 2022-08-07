@@ -20,6 +20,8 @@ public class Product {
     public String imageMain ;
     public List<String> images ;
 
+
+
     public Product(String product_id, String product_name, String category_id, double price, double rateDiscount, String promotion_id, String brand, String category_name, int inventory_quantity, String description, int active) {
         this.product_id = product_id;
         this.product_name = product_name;
@@ -153,6 +155,13 @@ public class Product {
     public void setImageMain(String imageMain) {
         this.imageMain = imageMain;
     }
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+
+    public List<String> getImages() {
+        return images;
+    }
 
     @Override
     public String toString() {
@@ -174,5 +183,10 @@ public class Product {
                 ", imageMain='" + imageMain + '\'' +
                 ", images=" + images +
                 '}';
+    }
+    public double productSellPrice(){
+        double result=0;
+        result=price*rateDiscount/100;
+        return result;
     }
 }

@@ -1,3 +1,6 @@
+<%@ page import="java.util.List" %>
+<%@ page import="vn.hcmuaf.edu.vn.project_web.beans.CartItem" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -13,42 +16,34 @@
         <span class="cart-price cart-header cart-column">Giá</span>
         <span class="cart-quantity cart-header cart-column">Số Lượng</span>
     </div>
+     <jsp:useBean id="carts" scope="request" type="java.util.List"/>
+     <c:forEach var="cart" items="${carts}">
     <div class="cart-row">
         <div class="cart-item cart-column">
-            <img class="cart-item-image" src="images/main/Brandmall_Luminarc_BSP_1-(7).jpg" >
-            <span class="cart-item-title">Bộ Nồi Thuỷ Tinh</span>
+            <img class="cart-item-image" src="${cart.cart_id}" >
+            <span class="cart-item-title">${cart.cart_product.product_name}</span>
         </div>
-        <span class="cart-price cart-column">300.000đ</span>
+        <span class="cart-price cart-column">${cart.cart_product.price}</span>
         <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="1">
-            <button class="btn btn-danger" type="button">Xóa</button>
+            <input class="cart-quantity-input" type="number" value="${cart.cart_product.quantitySold}">
+            <form action="./DeleteCartController">
+                <input type="hidden" name="product_id" value="${cart.cart_product.product_id}">
+                <button class="btn btn-danger" type="submit">Xóa</button>
+            </form>
+
         </div>
     </div>
-    <div class="cart-row">
-        <div class="cart-item cart-column">
-            <img class="cart-item-image" src="images/main/Brandmall_Luminarc_BSP_2-(7).jpg" >
-            <span class="cart-item-title">Bộ Bàn Ăn Thuỷ Tinh</span>
-        </div>
-        <span class="cart-price cart-column">300.000</span>
-        <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="1">
-            <button class="btn btn-danger" type="button">Xóa</button>
-        </div>
-    </div>
-    <div class="cart-row">
-        <div class="cart-item cart-column">
-            <img class="cart-item-image" src="images/main/Brandmall_Luminarc_BSP_3-(7).jpg" >
-            <span class="cart-item-title">Bộ Bình Ly Thuỷ Tinh</span>
-        </div>
-        <span class="cart-price cart-column">300.000</span>
-        <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="1">
-            <button class="btn btn-danger" type="button">Xóa</button>
-        </div>
-    </div>
+     </c:forEach>
     <div class="cart-total">
+        <%
+            double total_money=0;
+            List<CartItem> listCarts = (List<CartItem>) request.getSession().getAttribute("cart");
+            for(CartItem item:listCarts){
+                total_money += item.getTotalMoney();
+            }
+        %>
         <strong class="cart-total-title">Tổng Cộng:</strong>
-        <span class="cart-total-price">500.000đ</span>
+        <span class="cart-total-price"><%=total_money%></span>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button class="btn btn-primary me-md-2" type="button"><a href="./payment.html">Thanh Toán </a> </button>

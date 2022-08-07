@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -7,27 +8,35 @@
 --%>
 <link rel="stylesheet" href="./css/product_detail.css">
 <%@ include file="./header.jsp"%>
+
+<c:set var="products" value='${requestScope["product_details"]}' />
 <div class="product-contain">
     <div class="product-img">
-        <img class="p-img" src="./images/main/ban-hoc-sinh-xep-gon-cho-be-tien-loi-san_2408576_L.jpg" alt="ban hoc sinh">
+        <img class="p-img" src="${products.imageMain}" alt="ban hoc sinh">
     </div>
     <div class="product-detail">
-        <p class="product-name">bộ 3 dao inock cao cấp không gi</p>
-        <p>Thương Hiệu: <span class="product-brand"> name brand</span></p>
+        <p class="product-name">${products.product_name}</p>
+        <p>Thương Hiệu: <span class="product-brand"> ${products.brand}/span></p>
         <p>
-            price:<span class="product-sell-price"> 500000</span> <span class="product-price"> 700000</span>
+            price:<span class="product-sell-price"> ${products.price}</span> <span class="product-price"> ${products.price}</span>
         </p>
         <div class="product-detail-img">
+            <c:forEach var="images" items="${products.images}">
+                <img src="${images}">
+            </c:forEach>
         </div>
         <div class="product-quanlity">
             <p>Số Lượng:</p>
             <div class="quanlity">
                 <button class="minus">-</button>
-                <input type="text" name="number" id="num">
+                <input type="number" name="quantity" id="num" value="1">
                 <button class="plus">+</button>
             </div>
         </div>
-        <button class="product-buy">Mua Ngay</button>
+        <form>
+            <input type="hidden" name="product_id" value="${products.product_id}">
+            <button class="product-buy">Buy Now</button>
+        </form>
     </div>
     <div class="product-promotion">
         <h3>Khuyến mãi</h3>

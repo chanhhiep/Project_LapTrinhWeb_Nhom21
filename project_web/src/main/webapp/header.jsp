@@ -31,8 +31,10 @@
     </header>
     <ul class="header-list">
         <li>
+            <a href="./CosmeticCategory">
             <img src="./images/icon/dress.png" alt="fashion">
             <p>Thời Trang</p>
+            </a>
         </li>
         <li>
             <img src="./images/icon/comestics.png" alt="comestics">
