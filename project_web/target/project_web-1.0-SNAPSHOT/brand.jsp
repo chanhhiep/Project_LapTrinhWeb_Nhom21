@@ -6,7 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <link rel="stylesheet" href="./css/brand.css">
-<%@ include file="./header.jsp"%>
+<c:set var="auth" value="${sessionScope.auth}"/>
+<c:if test="${auth==null}">
+    <%@ include file="header.jsp"%>
+</c:if>
+<c:if test="${auth!=null}">
+    <c:if test="${auth.role.equals('customer')}">
+        <%@ include file="pheader.jsp"%>
+    </c:if>
+</c:if>
 <div class="des2">
     <h2 >TOP BRAND TỐT NHẤT NĂM</h2>
     <div class="row">

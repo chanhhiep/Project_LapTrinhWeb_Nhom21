@@ -42,12 +42,13 @@ public class Login extends HttpServlet {
                 session.setAttribute("email",usr.email);
                 session.setAttribute("customer",usr.customer_id);
                 System.out.println(usr.username);
-                response.sendRedirect("./home.jsp");
+                response.sendRedirect("./HomePage");
             }
         }
         else
         {
             request.setAttribute("error", "username is exits or error system");
+            request.getRequestDispatcher("./LoginPage").forward(request, response);
         }
     }
 }

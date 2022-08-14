@@ -20,17 +20,39 @@
             <h3 class="admin_name">chanhhiep</h3>
             <p>administater</p>
         </div>
-        <h3 class="admind_section"><a href="#"> DashBoard</a></h3>
-        <h3 class="admind_section"><a href="./ProductAdminController">Product Manager</a></h3>
-        <h3 class="admind_section"><a href="#">Payment Method Manager</a></h3>
-        <h3 class="admind_section"><a href="#">Customer Manager</a></h3>
-        <h3 class="admind_section"><a href="#">Image Manager</a></h3>
-        <h3 class="admind_section"><a href="#">Category Manager</a></h3>
-        <h3 class="admind_section"><a href="#">Color Manager</a></h3>
-        <h3 class="admind_section"><a href="#">Review Manager</a></h3>
-        <h3 class="admind_section"><a href="#">Sale Manager</a></h3>
-        <h3 class="admind_section"><a href="#">User Manager</a></h3>
-        <h3 class="admind_section"><a href="#">Size Manager</a></h3>
+        <h3 class="admind_section">
+            <a href="./DashboardAdminController">DashBoard</a>
+        </h3>
+        <h3 class="admind_section">
+            <a href="./ProductAdminController">Product Manager</a>
+        </h3>
+        <h3 class="admind_section">
+            <a href="./PaymentAdminController">Payment Method Manager</a>
+        </h3>
+        <h3 class="admind_section">
+            <a href="./CustomerAdminController">Customer Manager</a>
+        </h3>
+        <h3 class="admind_section">
+            <a href="./ImageAdminController">Image Manager</a>
+        </h3>
+        <h3 class="admind_section">
+            <a href="./CategoryAdminController">Catagory Manager</a>
+        </h3>
+        <h3 class="admind_section">
+            <a href="./ColorAdminController">Color Manager</a>
+        </h3>
+        <h3 class="admind_section">
+            <a href="./ReviewAdminController">Review Manager</a>
+        </h3>
+        <h3 class="admind_section">
+            <a href="./SaleAdminController">Sale Manager</a>
+        </h3>
+        <h3 class="admind_section">
+            <a href="./UserAdminController">User Manager</a>
+        </h3>
+        <h3 class="admind_section">
+            <a href="./SizeAdminController">Size Manager</a>
+        </h3>
     </div>
     <div class="container_right">
         <h2>Product Manager</h2>

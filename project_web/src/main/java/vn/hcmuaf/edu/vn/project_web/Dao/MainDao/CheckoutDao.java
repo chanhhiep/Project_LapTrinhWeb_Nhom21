@@ -3,6 +3,8 @@ package vn.hcmuaf.edu.vn.project_web.Dao.MainDao;
 import vn.hcmuaf.edu.vn.project_web.Database.DBConnect;
 import vn.hcmuaf.edu.vn.project_web.Database.jdbiConnector;
 import vn.hcmuaf.edu.vn.project_web.beans.CartItem;
+import vn.hcmuaf.edu.vn.project_web.beans.Coupon;
+import vn.hcmuaf.edu.vn.project_web.beans.Customer;
 import vn.hcmuaf.edu.vn.project_web.beans.PaymentMethod;
 
 import java.sql.*;
@@ -29,6 +31,8 @@ public class CheckoutDao {
         int state = 1;
         String receipt_id = generateId();
         String customer_id = generateId();
+        String color_id = "c01";
+        String size_id = "size01";
         Timestamp createDate = new Timestamp(new java.util.Date().getTime());
         Timestamp updateDate = new Timestamp(new java.util.Date().getTime());
 
@@ -43,20 +47,7 @@ public class CheckoutDao {
                         .bind(6, updateDate)
                         .execute()
         );
-        int b = 0;
-        for (CartItem item : listBuy) {
-            b = jdbiConnector.get().withHandle(handle ->
-                    handle.createUpdate("insert into receiptdetail(receipt_id,product_id,quantity,color_id,size_id,create_date,update_date) values(?,?,?,?,?,?,?)")
-                            .bind(0, receipt_id)
-                            .bind(1, item.getCart_product().product_id)
-                            .bind(2, item.cart_product.quantitySold)
-                            .bind(3, item.cart_product.color_id)
-                            .bind(4, item.cart_product.size_id)
-                            .bind(5, createDate)
-                            .bind(6, updateDate)
-                            .execute()
-            );
-        }
+
         int i = jdbiConnector.get().withHandle(handle ->
                 handle.createUpdate("insert into receipt(receipt_id,customer_id,discountcode_id,payment_id,value,state,create_date,update_date) values(?,?,?,?,?,?,?,?)")
                         .bind(0, receipt_id)
@@ -69,27 +60,31 @@ public class CheckoutDao {
                         .bind(7, updateDate)
                         .execute()
         );
+
+        int b = 0;
+        for (CartItem item : listBuy) {
+            b = jdbiConnector.get().withHandle(handle ->
+                    handle.createUpdate("insert into receiptdetail(receipt_id,product_id,quantity,color_id,size_id,create_date,update_date) values(?,?,?,?,?,?,?)")
+                            .bind(0, receipt_id)
+                            .bind(1, item.getCart_product().product_id)
+                            .bind(2, item.cart_product.quantitySold)
+                            .bind(3, color_id)
+                            .bind(4, size_id)
+                            .bind(5, createDate)
+                            .bind(6, updateDate)
+                            .execute()
+            );
+        }
         return i == 1 && c == 1 && b == 1;
     }
     public boolean SaveReceiptLogin(String coupon_id, String payment_id, double value, String customer_id, List<CartItem> listBuy){
         int state = 1;
         Timestamp createDate = new Timestamp(new java.util.Date().getTime());
         Timestamp updateDate = new Timestamp(new java.util.Date().getTime());
+        String color_id = "c01";
+        String size_id = "size01";
         String receipt_id = generateId();
-        int b = 0;
-        for (CartItem item : listBuy) {
-            b = jdbiConnector.get().withHandle(handle ->
-                    handle.createUpdate("insert into receiptdetail(receipt_id,product_id,quantity,color_id,size_id,create_date,update_date) values(?,?,?,?,?,?,?)")
-                            .bind(0, receipt_id)
-                            .bind(1, item.getCart_product().product_id)
-                            .bind(2, item.cart_product.quantitySold)
-                            .bind(3, item.cart_product.color_id)
-                            .bind(4, item.cart_product.size_id)
-                            .bind(5, createDate)
-                            .bind(6, updateDate)
-                            .execute()
-            );
-        }
+
         int i = jdbiConnector.get().withHandle(handle ->
                 handle.createUpdate("insert into receipt(receipt_id,customer_id,discountcode_id,payment_id,value,state,create_date,update_date) values(?,?,?,?,?,?,?,?)")
                         .bind(0, receipt_id)
@@ -102,35 +97,43 @@ public class CheckoutDao {
                         .bind(7, updateDate)
                         .execute()
         );
+        int b = 0;
+        for (CartItem item : listBuy) {
+            b = jdbiConnector.get().withHandle(handle ->
+                    handle.createUpdate("insert into receiptdetail(receipt_id,product_id,quantity,color_id,size_id,create_date,update_date) values(?,?,?,?,?,?,?)")
+                            .bind(0, receipt_id)
+                            .bind(1, item.getCart_product().product_id)
+                            .bind(2, item.cart_product.quantitySold)
+                            .bind(3, color_id)
+                            .bind(4, size_id)
+                            .bind(5, createDate)
+                            .bind(6, updateDate)
+                            .execute()
+            );
+        }
         return i==1 && b==1;
     }
-    public String getCoupon(String coupon_id){
-        /*
-        * List<string> listCouponId = new List<string>();
-            string sql = "select id_magg from magiamgia where id_magg=@id_magg";
-            MySqlCommand command = new MySqlCommand();
-            MySqlConnection connect = KetNoi.GetDBConnection();
-            connect.Open();
-            command.Connection = connect;
-            command.CommandText = sql;
-            command.Prepare();
-            command.Parameters.AddWithValue("@id_magg", couponId);
-            using (DbDataReader reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    listCouponId.Add(reader.GetString(0));
-                }
-                reader.Close();
-                //Console.WriteLine(usersList[0]);
-                if (listCouponId.Count != 1) return null;
-                string coupon = listCouponId[0];
+    public Coupon getCoupon(String coupon_id){
 
-                //if (!user.userName.Equals(username) || verify(user.password, password) == false) return null;
-                return coupon;
+        List<Coupon> listCouponId = new ArrayList<Coupon>();
+        String sql = "select discountcode_id,content,rate,create_date,update_date from discountcode where discountcode_id=?";
+        try {
+            Connection conn = DBConnect.getInstance().getConn();
+            System.out.println("success");
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1,coupon_id);
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()){
+                listCouponId.add(new Coupon(rs.getString("discountcode_id"),rs.getString("content"),rs.getDouble("rate"),rs.getTimestamp("create_date"),rs.getTimestamp("update_date")));
             }
-            * */
-         return "";
+            rs.close();
+            if (listCouponId.size() != 1) return null;
+            Coupon coupon = listCouponId.get(0);
+            return coupon;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
     }
     public List<PaymentMethod> getPaymentMethod(){
         List<PaymentMethod> result = new ArrayList<PaymentMethod>();
@@ -149,5 +152,27 @@ public class CheckoutDao {
             e.printStackTrace();
         }
         return result;
+    }
+    public Customer getCustomerById(String customer_id){
+        List<Customer> result = new ArrayList<Customer>();
+        String sql  = "select customer_id,customer_name,email,phone,address,create_date,update_date " +
+                "FROM customer where customer_id=?";
+        try {
+            Connection conn = DBConnect.getInstance().getConn();
+            System.out.println("success");
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1,customer_id);
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()){
+                result.add(new Customer(rs.getString("customer_id"),rs.getString("customer_name"),rs.getString("email"),rs.getString("phone"),rs.getString("address"),rs.getTimestamp("create_date"),rs.getTimestamp("update_date")));
+            }
+            rs.close();
+            if (result.size() != 1) return null;
+            Customer customer = result.get(0);
+            return customer;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
     }
 }

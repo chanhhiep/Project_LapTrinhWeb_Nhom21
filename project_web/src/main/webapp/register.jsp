@@ -40,6 +40,6 @@
         <input type="text" name="address" class="txt" id="Address" placeholder="Address">
         <input type="submit" id="btn" value="Sign Up">
     </form>
-    <p class="signup">Alredy have a account? <a href="./login.jsp">Login</a></p>
+    <p class="signup">Alredy have a account? <a href="./LoginPage">Login</a></p>
 </div>
 <%@ include file="./footer.jsp"%>

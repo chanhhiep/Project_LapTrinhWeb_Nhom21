@@ -45,7 +45,7 @@ public class UserDao {
     public List<User> getAllUser(){
         List<User> result = new ArrayList<User>();
         String sql  = "select user_id,user_name,password,role,email,customer_id,active,token " +
-                "FROM user";
+                "FROM users";
         try {
             Connection conn = DBConnect.getInstance().getConn();
             System.out.println("success");
@@ -70,7 +70,7 @@ public class UserDao {
         Timestamp createDate = new Timestamp(new java.util.Date().getTime());
         Timestamp updateDate = new Timestamp(new java.util.Date().getTime());
         int i = jdbiConnector.get().withHandle(handle ->
-                handle.createUpdate("insert into user(user_id,user_name,password,email,role,token,customer_id,active,create_date,update_date) values(?,?,?,?,?,?,?,?,?,?)")
+                handle.createUpdate("insert into users(user_id,user_name,password,email,role,token,customer_id,active,create_date,update_date) values(?,?,?,?,?,?,?,?,?,?)")
                         .bind(0,user_id)
                         .bind(1,user_name)
                         .bind(2,hashPassword(password))
@@ -88,7 +88,7 @@ public class UserDao {
     public boolean UpdateUserById(String user_id,String user_name,String password,String role,String email,String customer_id,int active){
         Timestamp updateDate = new Timestamp(new Date().getTime());
         int i = jdbiConnector.get().withHandle(handle ->
-                handle.createUpdate("update user " +
+                handle.createUpdate("update users " +
                                 "set user_name=?, password=?, email=?,role=?,customer_id=?,active=?, update_date=? " +
                                 "where user_id=?")
                         .bind(0,user_name)
@@ -106,10 +106,35 @@ public class UserDao {
     }
     public boolean DeleteUserById(String user_id){
         int i = jdbiConnector.get().withHandle(handle ->
-                handle.createUpdate("delete from user where user_id = ?")
+                handle.createUpdate("delete from users where user_id = ?")
                         .bind(0,user_id)
                         .execute()
         );
         return i==1;
+    }
+    public User CheckLogin(String username,String password) {
+
+        List<User> usersList = new ArrayList<User>();
+        ResultSet rs = null;
+        try {
+            Connection conn = DBConnect.getInstance().getConn();
+            PreparedStatement statement = conn.prepareStatement("select * from users where user_name = ?");
+            statement.setString(1,username);
+            rs = statement.executeQuery();
+            while(rs.next()){
+                usersList.add(new User(rs.getString("user_id"),rs.getString("user_name"),rs.getString("password"),rs.getString("role"),rs.getString("email"),rs.getString("customer_id"),rs.getInt("active"),rs.getString("token")));
+            }
+            rs.close();
+            System.out.println(usersList.get(0));
+            if(usersList.size()!=1)return null;
+            User user = usersList.get(0);
+            System.out.println("success prepare");
+            if(!user.getUsername().equals(username) || !user.getPassword().equals(hashPassword(password))) return null;
+            System.out.println("success");
+            return user;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

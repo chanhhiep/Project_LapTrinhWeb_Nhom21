@@ -45,7 +45,7 @@ public class UserDao {
         ResultSet rs = null;
         try {
             Connection conn = DBConnect.getInstance().getConn();
-            PreparedStatement statement = conn.prepareStatement("select * from user where user_name = ?");
+            PreparedStatement statement = conn.prepareStatement("select * from users where user_name = ?");
             statement.setString(1,username);
             rs = statement.executeQuery();
             while(rs.next()){
@@ -85,7 +85,7 @@ public class UserDao {
                         .execute()
         );
         int i = jdbiConnector.get().withHandle(handle ->
-                handle.createUpdate("insert into user(user_id,user_name,password,email,role,token,customer_id,active,create_date,update_date) values(?,?,?,?,?,?,?,?,?,?)")
+                handle.createUpdate("insert into users(user_id,user_name,password,email,role,token,customer_id,active,create_date,update_date) values(?,?,?,?,?,?,?,?,?,?)")
                         .bind(0,user_id)
                         .bind(1,user_name)
                         .bind(2,hashPassword(password))
@@ -114,7 +114,7 @@ public class UserDao {
     public Boolean updateUserPassword(String user_id, String password)
     {
         int i = jdbiConnector.get().withHandle(handle ->
-                handle.createUpdate("update user " +
+                handle.createUpdate("update users " +
                                 "set password=? " +
                                 "where user_id=?")
                         .bind(0,password)
@@ -134,7 +134,7 @@ public class UserDao {
     {
         int active = 1;
         int i = jdbiConnector.get().withHandle(handle ->
-                handle.createUpdate("update user set active=? where token=?")
+                handle.createUpdate("update users set active=? where token=?")
                         .bind(0,active)
                         .bind(1,token)
                         .execute()
@@ -144,7 +144,7 @@ public class UserDao {
     public String getToken(String email) {
 
         List<String> tokenList = new ArrayList<String>();
-        String sql  = "select token from user where email=?";
+        String sql  = "select token from users where email=?";
         try {
             Connection conn = DBConnect.getInstance().getConn();
             System.out.println("success");
