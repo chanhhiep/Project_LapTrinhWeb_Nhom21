@@ -46,6 +46,7 @@ public class SaveReceipt extends HttpServlet {
                 if(CheckoutService.getInstance().SaveReceiptNotLogin(coupon_id,payment_id,total_money,customer_name,customer_address,customer_phone,customer_email,carts)){
                     request.setAttribute("payment_notify","success payment");
                     carts.clear();
+                    session.setAttribute("message","payment");
                     request.getRequestDispatcher("./HomePage").forward(request, response);
                 }
                 else{
@@ -58,10 +59,12 @@ public class SaveReceipt extends HttpServlet {
             if(CheckoutService.getInstance().SaveReceiptLogin(coupon_id,payment_id,total_money,customer,carts)){
                 request.setAttribute("payment_notify","success payment");
                 carts.clear();
+                session.setAttribute("message","payment");
                 request.getRequestDispatcher("./HomePage").forward(request, response);
             }
             else{
                 request.setAttribute("payment_notify","something wrong");
+                //session.setAttribute("message","false");
                 request.getRequestDispatcher("./CheckoutPage").forward(request, response);
             }
         }

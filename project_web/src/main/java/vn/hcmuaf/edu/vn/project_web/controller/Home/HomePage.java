@@ -12,7 +12,6 @@ public class HomePage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("products", ProductService.getInstance().GetAllProducts());
-       // request.setAttribute("categorys",ProductService.getInstance().GetAllCategory());
         request.getRequestDispatcher("./home.jsp").forward(request,response);
     }
 

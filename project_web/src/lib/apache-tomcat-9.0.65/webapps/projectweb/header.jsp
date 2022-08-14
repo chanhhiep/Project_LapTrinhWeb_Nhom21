@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="./css/head.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
 </head>
 <body>
 <div class="contain">
@@ -28,6 +29,7 @@
         <p><a href="./brand.jsp">Thương Hiệu</a></p>
         <a href="./ShowCartController"><img src="./images/icon/cart.png" alt="cart" class="head-img"></a>
         <a href="./LoginPage"><img src="./images/icon/acount.png" alt="acount" class="head-img"></a>
+
     </header>
     <ul class="header-list">
         <li>
