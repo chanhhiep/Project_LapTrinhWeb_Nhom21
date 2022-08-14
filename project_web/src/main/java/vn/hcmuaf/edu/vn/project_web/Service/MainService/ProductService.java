@@ -1,10 +1,7 @@
 package vn.hcmuaf.edu.vn.project_web.Service.MainService;
 
 import vn.hcmuaf.edu.vn.project_web.Dao.MainDao.ProductDao;
-import vn.hcmuaf.edu.vn.project_web.beans.Category;
-import vn.hcmuaf.edu.vn.project_web.beans.Color;
-import vn.hcmuaf.edu.vn.project_web.beans.Product;
-import vn.hcmuaf.edu.vn.project_web.beans.Size;
+import vn.hcmuaf.edu.vn.project_web.beans.*;
 
 import java.util.List;
 
@@ -45,5 +42,11 @@ public class ProductService {
     }
     public List<Category> GetAllCategory(){
         return ProductDao.getInstance().getAllCategory();
+    }
+    public List<Review> getReviewByProductId(String product_id){
+        return ProductDao.getInstance().GetReviewByProductId(product_id);
+    };
+    public boolean SaveReview(String product_id,String username,int star_number, String content){
+        return  ProductDao.getInstance().SaveReview(product_id, username, star_number, content);
     }
 }

@@ -1,14 +1,14 @@
 package vn.hcmuaf.edu.vn.project_web.Dao.MainDao;
 
 import vn.hcmuaf.edu.vn.project_web.Database.DBConnect;
+import vn.hcmuaf.edu.vn.project_web.Database.jdbiConnector;
 import vn.hcmuaf.edu.vn.project_web.beans.*;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class ProductDao {
     private static ProductDao instance=null;
@@ -32,11 +32,9 @@ public class ProductDao {
             statement.setString(1,product_id);
             rs = statement.executeQuery();
             while(rs.next()){
-                ImageList.add(rs.getString("image_link"));
+                ImgLink = rs.getString("image_link").toString();
             }
             rs.close();
-            ImgLink = ImageList.get(0);
-
             return ImgLink;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -251,6 +249,7 @@ public class ProductDao {
                         ,rs.getInt("active")));
             }
             System.out.println("et o et");
+            rs.close();
             for (Product p: result) {
                 p.imageMain=getImageMain(p.product_id);
             }
@@ -455,5 +454,47 @@ public class ProductDao {
             e.printStackTrace();
             return null;
         }
+    }
+    public List<Review> GetReviewByProductId(String product_id){
+        List<Review> result = new ArrayList<Review>();
+        String sql  = "select review_id,product_id,username,star_number,content,create_date,update_date " +
+                "FROM review where product_id=?";
+        try {
+            Connection conn = DBConnect.getInstance().getConn();
+            System.out.println("success");
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1,product_id);
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()){
+                result.add(new Review(rs.getString("review_id"),rs.getString("product_id"),rs.getString("username"),rs.getInt("star_number"),rs.getString("content"),rs.getTimestamp("create_date"),rs.getTimestamp("update_date")));
+            }
+            rs.close();
+            System.out.println("et o et");
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+    public String generateId(){
+        String result= UUID.randomUUID().toString();
+        return result;
+    }
+    public boolean SaveReview(String product_id,String username,int star_number, String content){
+            Timestamp createDate = new Timestamp(new java.util.Date().getTime());
+            Timestamp updateDate = new Timestamp(new Date().getTime());
+            String review_id= generateId();
+            int i = jdbiConnector.get().withHandle(handle ->
+                    handle.createUpdate("insert into review(review_id,product_id,username,star_number,content,create_date,update_date) values(?,?,?,?,?,?,?)")
+                            .bind(0,review_id)
+                            .bind(1,product_id)
+                            .bind(2,username)
+                            .bind(3,star_number)
+                            .bind(4,content)
+                            .bind(5,createDate)
+                            .bind(6,updateDate)
+                            .execute()
+            );
+            return i==1;
+
     }
 }

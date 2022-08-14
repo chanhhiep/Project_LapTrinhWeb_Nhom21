@@ -9,7 +9,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <link rel="stylesheet" href="./css/cart.css">
-<%@ include file="./header.jsp"%>
+<c:set var="auth" value="${sessionScope.auth}"/>
+<c:if test="${auth==null}">
+    <%@ include file="header.jsp"%>
+</c:if>
+<c:if test="${auth!=null}">
+    <c:if test="${auth.role.equals('customer')}">
+        <%@ include file="pheader.jsp"%>
+    </c:if>
+</c:if>
 <div class="cart">
     <div class="cart-row">
         <span class="cart-item cart-header cart-column">Sản Phẩm</span>
@@ -20,7 +28,7 @@
      <c:forEach var="cart" items="${carts}">
     <div class="cart-row">
         <div class="cart-item cart-column">
-            <img class="cart-item-image" src="${cart.cart_id}" >
+            <img class="cart-item-image" src="${cart.cart_product.imageMain}" >
             <span class="cart-item-title">${cart.cart_product.product_name}</span>
         </div>
         <span class="cart-price cart-column">${cart.cart_product.price}</span>
@@ -46,7 +54,7 @@
         <span class="cart-total-price"><%=total_money%></span>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary me-md-2" type="button"><a href="./payment.html">Thanh Toán </a> </button>
+        <button class="btn btn-primary me-md-2" type="button"><a href="./CheckoutPage">Thanh Toán </a> </button>
     </div>
 </div>
 <!-- SP HNAY -->

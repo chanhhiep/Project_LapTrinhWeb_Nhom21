@@ -21,9 +21,9 @@
 <c:forEach var="p" items="${products}">
     <div class="container-box">
         <img src="${p.imageMain}" class="box-img" alt="domestic">
-        <p><a href="./product.html" class="product-name">${p.product_name} </a></p>
-        <p>brand : ${p.brand}</p>
-        <p class="sell-price">giá : ${p.price}  <span class="price">${p.price}</span></p>
+        <p><a href="./product.html" class="product-name" style="font-size: 10px">${p.product_name} </a></p>
+        <p style="font-size: 10px">brand : ${p.brand}</p>
+        <p class="sell-price" style="font-size: 10px">giá : ${p.price}  <span class="price">${p.price}</span></p>
         <div class="btn-submit">
             <form action="./ProductDetailController">
                 <input type="hidden" name="product_id" value="${p.product_id}">

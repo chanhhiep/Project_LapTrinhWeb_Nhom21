@@ -34,4 +34,7 @@ public class UserAdminService {
     public boolean DeleteUserById(String User_id){
         return UserDao.getInstance().DeleteUserById(User_id);
     }
+    public static User CheckLogin(String username, String password){
+        return UserDao.getInstance().CheckLogin(username,password);
+    }
 }

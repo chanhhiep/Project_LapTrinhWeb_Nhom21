@@ -7,7 +7,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <link rel="stylesheet" href="./css/product_detail.css">
-<%@ include file="./header.jsp"%>
+<c:set var="auth" value="${sessionScope.auth}"/>
+<c:if test="${auth==null}">
+    <%@ include file="header.jsp"%>
+</c:if>
+<c:if test="${auth!=null}">
+    <c:if test="${auth.role.equals('customer')}">
+        <%@ include file="pheader.jsp"%>
+    </c:if>
+</c:if>
 
 <c:set var="products" value='${requestScope["product_details"]}' />
 <div class="product-contain">
@@ -33,7 +41,7 @@
                 <button class="plus">+</button>
             </div>
         </div>
-        <form>
+        <form action="./AddToCartServlet">
             <input type="hidden" name="product_id" value="${products.product_id}">
             <button class="product-buy">Buy Now</button>
         </form>
@@ -53,17 +61,10 @@
     <div class="infomation">
         <h3>thông tin sản phẩm</h3>
         <div class="lines"></div>
-        <p>
-            Thiết kế đơn giản, tinh tế
-            Công nghệ mài đơn 65% tạo góc cắt nhỏ vượt trội
-            Độ sắc bén, bền cứng và chống gỉ cao
-            Nấu ăn nhanh hơn
-            Tiện lợi, an toàn khi sử dụng
-            Bề mặt mài lưỡi dao rộng gấp 3 lần giúp mài lại nhiều lần
-            Chuyên sử dụng cho các loại hoa quả
-        </p>
         <p>mô tả sản phẩm</p>
-        <p>Để thưởng thức hoa quả ngon không thể thiếu đượcdao gọt hoa quảsắc bén, hỗ trợ tối đa cho công việc nhà bếp của bạn thêm phần đơn giản và nhanh chóng hơn.Sản phẩmdao gọt hoa quả Sunhouse KS-KN100PSlà sự lựa chọn hoàn hảo cho gia đình bạn với thiết kế đơn giản, tinh tế với lưỡi dao sắc bén cùng chất lượng tuyệt hảo mang đến sự chính xác và an toàn cho người sử dụng.</p>
+        <p>
+            ${products.description}
+        </p>
     </div>
     <div class="delivery">
         <h3>Tùy Chọn Giao Hàng</h3>
