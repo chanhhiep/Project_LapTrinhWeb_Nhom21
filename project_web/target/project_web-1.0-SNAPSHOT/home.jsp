@@ -31,7 +31,7 @@
             </form>
             <form action="./AddToCartServlet">
                 <input type="hidden" name="product_id" value="${p.product_id}">
-                <button type="submit" class="sell-button" style="background-color: orangered;">Add To Card</button>
+                <button type="submit" class="sell-button" style="background-color: orangered;" >Add To Card</button>
             </form>
         </div>
     </div>

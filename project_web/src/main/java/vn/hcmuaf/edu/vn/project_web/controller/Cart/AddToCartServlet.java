@@ -40,11 +40,9 @@ public class AddToCartServlet extends HttpServlet {
                 cart.get(CartService.getInstance().isExits(product_id,request)).getCart_product().quantitySold +=1;
             }
             System.out.println("herehrehre");
-            for(CartItem c:cart){
-                System.out.println(c);
-            }
             session.setAttribute("cart",cart);
         }
+        session.setAttribute("message","added");
         response.sendRedirect("./HomePage");
     }
 
