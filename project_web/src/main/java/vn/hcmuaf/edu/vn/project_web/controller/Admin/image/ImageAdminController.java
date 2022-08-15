@@ -1,5 +1,7 @@
 package vn.hcmuaf.edu.vn.project_web.controller.Admin.image;
 
+import vn.hcmuaf.edu.vn.project_web.Service.AdminService.ColorAdminService;
+import vn.hcmuaf.edu.vn.project_web.Service.AdminService.ImageAdminService;
 import vn.hcmuaf.edu.vn.project_web.beans.User;
 
 import javax.servlet.*;
@@ -17,6 +19,7 @@ public class ImageAdminController extends HttpServlet {
             response.sendRedirect("./LoginAdminController");
         }
         else {
+            request.setAttribute("images_admin", ImageAdminService.getInstance().getAllImage());
             request.getRequestDispatcher("/admin/admin_image.jsp").forward(request, response);
         }
     }

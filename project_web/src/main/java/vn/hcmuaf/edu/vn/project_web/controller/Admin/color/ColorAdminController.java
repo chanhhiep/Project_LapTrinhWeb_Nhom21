@@ -17,8 +17,10 @@ public class ColorAdminController extends HttpServlet {
         if(admin == null){
             response.sendRedirect("./LoginAdminController");
         }
-        request.setAttribute("colors_admin", ColorAdminService.getInstance().getAllColor());
-        request.getRequestDispatcher("/admin/admin_color.jsp").forward(request,response);
+        else {
+            request.setAttribute("colors_admin", ColorAdminService.getInstance().getAllColor());
+            request.getRequestDispatcher("/admin/admin_color.jsp").forward(request, response);
+        }
     }
 
     @Override
